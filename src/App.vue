@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app">
+    <app-button @click="openModal" outlined>Налоговый вычет</app-button>
+    <transition name="fade">
+      <tax-calc-modal v-if="isVisibleModal" @close="closeModal" />
+    </transition>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TaxCalcModal from "./components/TaxCalcModal.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  components: { TaxCalcModal },
+  name: "App",
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  data() {
+    return {
+      isVisibleModal: false,
+    };
+  },
+  methods: {
+    openModal() {
+      this.isVisibleModal = true;
+    },
+    closeModal() {
+      this.isVisibleModal = false;
+    },
+  },
+};
+</script>
+<style lang="scss" scoped>
+@import "@/assets/styles/_variables.scss";
+.app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $red-gradient;
 }
 </style>

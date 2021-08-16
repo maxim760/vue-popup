@@ -1,0 +1,16 @@
+$red: #ea0029;
+$red-gradient: linear-gradient(
+    255.35deg,
+    #dc3131 0.83%,
+    rgba(255, 79, 79, 0) 108.93%
+  ),
+  #ff5e56;
+$orange: #f53a31;
+$gray900: #bec5cc;
+$gray800: #dfe3e6;
+$radius: 6px;
+
+// media query breakpoints
+$media-desktop: 'only screen and (max-width : 1024px)';
+$media-tablet: 'only screen and (max-width : 768px)';
+$media-mobile: 'only screen and (max-width : 480px)';

@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-import store from './store'
+import App from '@/App.vue'
+import components from '@/components/UI'
+import '@/assets/styles/index.scss'
 
-createApp(App).use(store).mount('#app')
+const app = createApp(App)
+components.forEach((component) => {
+  app.component(component.name, component)
+})
+app.mount('#app')
